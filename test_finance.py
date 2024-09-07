@@ -1,5 +1,8 @@
+#importamos desde finance.py las funciones creadas
+from finance import create_account, add_transaction, get_account_balance, get_total_balance
 
-# Imprimir el menu
+
+# Creamos el menu
 def main():
 
 
@@ -27,7 +30,7 @@ def main():
             account_id = int(input("Ingrese el id de la cuenta: "))
             description = input("Ingrese una descripcion de la transaccion: ")
             amount = float(input("Ingrese el monto de la transaccion: "))
-            add_transaction(accounts, account_id, amount, description)
+            add_transaction(accounts, description, account_id, amount, description)
             print(f"Transaccion de {amount} realizada en la cuenta {account_id}")
 
         elif option == 3:
@@ -47,4 +50,5 @@ def main():
         else:   
             print("opcion invalida, por favor intenta de nuevo") 
 
-if __name__             
+if __name__  == "__main__":
+    main()
