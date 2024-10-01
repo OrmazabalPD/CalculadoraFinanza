@@ -5,9 +5,10 @@ def create_account(accounts, name, account_type):
 
     global global_accounts_id
     account ={
+
+        "id": global_accounts_id,
         "name": name,
         "type": account_type,
-        "balance":0,
         "transactions":[]
     }
 
@@ -37,3 +38,11 @@ def calculate_transactions(account):
 
 
 def get_account_balance(accounts, account_name):
+    account = find_account_by_name(accounts, account_name)
+    if account:
+        balance = calculate_transactions(account)
+        return balance
+    else:
+        print(f"La cuenta {account_name} no existe")
+        return None
+    
