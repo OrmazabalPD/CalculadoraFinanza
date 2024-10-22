@@ -4,7 +4,7 @@ global_accounts_id = 0
 def create_account(accounts, name, account_type):
 
     global global_accounts_id
-    account ={
+    account = {
 
         "id": global_accounts_id,
         "name": name,
@@ -25,7 +25,7 @@ def find_account_by_name (accounts, account_name):
             return account
     return None
 
-def add_transactiion(accounts, description, account_name, amount):
+def add_transaction(accounts, description, account_name, amount):
     account = find_account_by_name(accounts, account_name) 
     if account:
         account['transactions'].append({"description":description,"amount":amount})
